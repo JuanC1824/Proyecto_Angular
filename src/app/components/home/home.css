@@ -1,0 +1,613 @@
+.saludo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding-top: 20px;
+  overflow: hidden;
+  background: url('/assets/img/football.jpg') center center / contain no-repeat black;
+}
+
+.apartado {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.apartado-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding-top: 40px;
+}
+
+.info {
+  padding: 12% 5%;
+  color: white;
+}
+
+.info h3 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.info p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.info a {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.info a:hover {
+  background: white;
+  color: black;
+}
+
+.info .color {
+  color: blue;
+  font-weight: bold;
+}
+
+.informes,
+.informes2 {
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.informes h1,
+.informes2 h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.informes p,
+.informes2 p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: gray;
+  max-width: 100%;
+}
+
+.modulos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 5%;
+}
+
+.modulos > div {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.modulos > div:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.modulos img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modulos p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.modulos a {
+  margin-top: auto;
+  align-self: flex-start;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.modulos a:hover {
+  color: black;
+}
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.imagenes img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: grayscale(0.2);
+  opacity: 0.9;
+}
+
+.imagenes img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.deportes-section {
+  padding: 3rem 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.deportes-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.deportes-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.deportes-header p {
+  color: #555;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  max-width: 100%;
+}
+
+.deportes-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.deporte-card {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deporte-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  user-select: none;
+}
+
+.card-content {
+  padding: 1.5rem 1.8rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.categoria {
+  background-color: #007bff;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+}
+
+.fecha {
+  font-style: normal;
+}
+
+.autor {
+  font-style: italic;
+  color: #999;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1.2rem;
+}
+
+.btn-ver-mas {
+  align-self: flex-start;
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.55rem 1.15rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(73, 72, 72, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-ver-mas:hover,
+.btn-ver-mas:focus {
+  background-color: white;
+  color: black;
+  box-shadow: 0 4px 12px rgba(75, 73, 73, 0.75);
+  outline: none;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: visible;
+  padding: 40px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/img/Web_2_-_2800_x_1240.webp') center center / cover no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 0;
+}
+
+.tag { z-index: 2;}
+.hero-content h1 { font-size: 36px; margin: 15px 0; }
+.hero-content p { font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
+.btn { 
+  z-index: 2;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease;
+  flex: 1 1 0;
+  min-width: 100px;
+  max-width: 120px;
+}
+
+.logo-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+.logo-box:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: transparent;
+}
+
+.hero-container-2 {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.hero-background-2 {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/img/captura-pica.png') center center / cover no-repeat;
+  filter: brightness(0.45);
+  z-index: 1;
+}
+
+.hero-content-2 {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.hero-content-2 .tag-2 {
+  display: inline-block;
+  background: #16a085;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero-content-2 h1 {
+  font-size: 42px;
+  margin: 0 0 16px;
+}
+
+.hero-content-2 p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-2 {
+  background: #e67e22;
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-2:hover {
+  background: #d35400;
+}
+
+.video-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.video-box {
+  flex: 1 1 400px;
+  position: relative;
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.video-overlay-container {
+  position: relative;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.video-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-overlay button {
+  position: relative;
+  z-index: 2;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.video-overlay button:hover {
+  background-color: #cc0000;
+}
+
+.text-box {
+  flex: 1 1 400px;
+}
+
+.text-box h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.video-section {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.video-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.video-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.video-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.video-card {
+  min-width: 150px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-card video {
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.video-desc {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.sports-section {
+  padding: 2rem 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.sports-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.sports-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sport-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 140px;
+}
+
+.sport-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.sport-card p {
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.sport-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}

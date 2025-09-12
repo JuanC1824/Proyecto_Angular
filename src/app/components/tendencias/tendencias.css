@@ -1,0 +1,52 @@
+.tendencias { 
+    margin:50px 5%; 
+    padding-top: 100px;
+}
+
+.tendencias h2 { 
+  font-size:2rem; 
+  margin-bottom:25px; 
+  color:#e50914; 
+}
+
+.tendencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.tendencia-card {
+  background:#1a1a1a;
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.tendencia-card:hover { 
+  transform:translateY(-5px); 
+}
+
+.tendencia-card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.tendencia-content {
+  padding:15px;
+}
+.tendencia-content h3 {
+  font-size:1.1rem;
+  margin-bottom:8px;
+}
+.tendencia-content p {
+  font-size:0.9rem;
+  color:#ccc;
+  margin-bottom:8px;
+}
+.categoria {
+  font-size:0.8rem;
+  background:#e50914;
+  padding:4px 8px;
+  border-radius:4px;
+}

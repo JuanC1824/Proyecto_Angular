@@ -1,0 +1,177 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#0b0b0b; color:#fff; }
+.hero-section {
+  padding-top: 10px;
+  position: relative;
+  background: url('/assets/img/9f9d012f75decff078874e6445c2dbe1.jpg') center/cover no-repeat;
+  height: 92vh;
+  display: flex; align-items: center; justify-content: center; text-align:center;
+}
+.hero-overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(51, 51, 51, 0.6); }
+.hero-content { position: relative; z-index:2; }
+.hero-content h1 { font-size:3.8rem; margin-bottom:10px; color: white;}
+.hero-content p { font-size:1.2rem; margin-bottom:20px; color: white;}
+.btn-primary { background-color:#e50914; color:#fff; padding:12px 30px; border:none; border-radius:6px; cursor:pointer; transition:0.3s; }
+.btn-primary:hover { background-color:#b00610; }
+.main-content { padding:50px 5%; }
+.content-grid { display:grid; grid-template-columns:2fr 1fr; gap:30px; }
+.latest-news h2 { font-size:2rem; margin-bottom:20px; }
+.news-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+.news-card { background:#818181; border-radius:10px; overflow:hidden; transition:0.3s; }
+.news-card:hover { transform:translateY(-5px); }
+.news-card img { width:100%; height:180px; object-fit:cover; }
+.news-content { padding:15px; }
+.news-content h3 { font-size:1.2rem; margin-bottom:10px; }
+.news-content p { font-size:0.95rem; color:#ccc; margin-bottom:10px; }
+.categoria { font-size:0.8rem; background:#e50914; padding:4px 8px; border-radius:4px; }
+.live-sidebar h2 { font-size:1.5rem; margin-bottom:15px; }
+.live-match { background:#1a1a1a; padding:15px; border-radius:10px; margin-bottom:20px; }
+.live-match h3 { font-size:1.1rem; margin-bottom:5px; }
+.live-match p { font-size:0.9rem; color:#ccc; margin-bottom:10px; }
+.live-match video { width:100%; border-radius:10px; }
+.video-highlights h2 { font-size:2rem; margin-bottom:25px; }
+.video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.video-card video { width:100%; border-radius:10px; }
+.video-card h4 { margin-top:10px; font-size:1rem; }
+.upcoming-matches h2 { font-size:2rem; margin-bottom:25px; }
+.match-cards { display:flex; gap:20px; overflow-x:auto; padding-bottom:10px; }
+.match-card { min-width:280px; background:#818181; border-radius:10px; overflow:hidden; transition:0.3s; }
+.match-card:hover { transform:translateY(-5px); }
+.match-card img { width:100%; height:180px; object-fit:cover; }
+.match-info { padding:15px; }
+.match-info h3 { font-size:1.1rem; margin-bottom:5px; }
+.match-info p { font-size:0.9rem; color:#ccc; }
+
+
+.calendario {
+  background: transparent;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.titulo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #222;
+  text-align: center;
+  padding: 30px;
+}
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filtros select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 0.95rem;
+}
+
+.partido-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.grid-jornadas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.jornada {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #f9f9f9;
+}
+
+.jornada h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.partidos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.partido {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.partido .equipo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.partido img {
+  width: 22px;
+  height: 22px;
+}
+
+.resultado {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #000;
+}
+
+.recent-results h2 { font-size:2rem; margin-bottom:25px; }
+.results-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.result-card { background:#818181; border-radius:10px; overflow:hidden; }
+.result-card img { width:100%; height:150px; object-fit:cover; }
+.result-info { padding:10px; }
+.result-info h3 { font-size:1rem; margin-bottom:5px; }
+.result-info p { font-size:0.85rem; color:#ccc; }
+.statistics h2 { font-size:2rem; margin-bottom:25px; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:15px; }
+.stat-card { background:#818181; padding:20px; border-radius:10px; text-align:center; }
+.stat-card h3 { font-size:1rem; margin-bottom:10px; }
+.stat-card p { font-size:1.2rem; font-weight:bold; }
+.analysis h2 { font-size:2rem; margin-bottom:25px; }
+.analysis-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+.analysis-card { background:#818181; border-radius:10px; overflow:hidden; transition:0.3s; }
+.analysis-card:hover { transform:translateY(-5px); }
+.analysis-card img { width:100%; height:180px; object-fit:cover; }
+.analysis-content { padding:15px; }
+.analysis-content h3 { font-size:1.1rem; margin-bottom:10px; }
+.analysis-content p { font-size:0.95rem; color:#ccc; }
+.sponsors { text-align:center; margin-top:50px; }
+.sponsors h2 { font-size:2rem; margin-bottom:20px; }
+.sponsor-logos { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
+.sponsor-logos img { max-width:150px; border-radius:10px; filter:brightness(0.9); transition:0.3s; }
+.sponsor-logos img:hover { filter:brightness(1); }
+.match-cards::-webkit-scrollbar { height:8px; }
+.match-cards::-webkit-scrollbar-thumb { background:#e50914; border-radius:4px; }
+@media(max-width:1024px){ .content-grid{ grid-template-columns:1fr; } }
+
+.video-player {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background-color: black;
+  object-fit: contain;
+}

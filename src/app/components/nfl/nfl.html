@@ -1,0 +1,76 @@
+<app-nav></app-nav>
+<div class="nfml-container">
+  <div class="hero-banner" data-aos="fade-in" data-aos-duration="1000">
+    <div class="overlay"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <h1 data-aos="zoom-in" data-aos-delay="100">NFL - Liga Nacional de <br>
+        Fútbol Mexicano</h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Sigue toda la acción de la NFML con resultados en vivo, estadísticas de jugadores, 
+        noticias destacadas y análisis de todos los equipos.
+      </p>
+      <button class="btn-primary" data-aos="flip-up" data-aos-delay="300">Ver partidos en Vivo  →</button>
+    </div>
+  </div>
+  <div class="main-content">
+    <section class="live-matches" data-aos="fade-up" data-aos-duration="1000">
+      <h2 data-aos="fade-down" data-aos-delay="100">Partidos en Vivo</h2>
+      <div *ngFor="let partido of partidosEnVivo" class="match-card" data-aos="fade-left" data-aos-delay="200">
+        <span class="status live" data-aos="fade-up" data-aos-delay="300">EN VIVO</span>
+        <div class="teams">
+          <div class="team" data-aos="fade-right" data-aos-delay="400">
+            <img [src]="partido.equipo1.logo" loading="lazy" [alt]="partido.equipo1.nombre" />
+            <p>{{ partido.equipo1.nombre }}</p>
+          </div>
+          <div class="score"  data-aos="zoom-in" data-aos-delay="500">{{ partido.equipo1.score }}</div>
+        </div>
+        <div class="teams">
+          <div class="team" data-aos="fade-right" data-aos-delay="600">
+            <img [src]="partido.equipo2.logo" loading="lazy" [alt]="partido.equipo2.nombre" />
+            <p>{{ partido.equipo2.nombre }}</p>
+          </div>
+          <div class="score" data-aos="zoom-in" data-aos-delay="700">{{ partido.equipo2.score }}</div>
+        </div>
+        <small data-aos="fade-up" data-aos-delay="800">{{ partido.tiempo }}</small>
+      </div>
+    </section>
+    <aside class="sidebar"  data-aos="fade-left" data-aos-duration="1000">
+      <div class="stats-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Líderes de la temporada</h3>
+        <ul>
+          <li *ngFor="let lider of lideresTemporada" data-aos="fade-right" data-aos-delay="200">
+            <span>{{ lider.jugador }}</span>
+            <span class="highlight">{{ lider.valor }}</span>
+            <small>{{ lider.stat }}</small>
+          </li>
+        </ul>
+      </div>
+      <div class="next-matches" data-aos="fade-up" data-aos-delay="300">
+        <h3>Próximos Partidos</h3>
+        <ul>
+          <li *ngFor="let proximo of proximosPartidos" data-aos="fade-left" data-aos-delay="400">
+            {{ proximo.partido }} <small>{{ proximo.hora }}</small>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+  <section class="news" data-aos="fade-up" data-aos-duration="1000">
+    <h2 data-aos="fade-down" data-aos-delay="100">Últimas noticias de la NFML</h2>
+    <div class="news-grid">
+      <article *ngFor="let noticia of noticias" class="news-card" data-aos="flip-up" data-aos-delay="200">
+        <img [src]="noticia.imagen" loading="lazy" [alt]="noticia.titulo" data-aos="zoom-in"/>
+        <h4 data-aos="fade-up" data-aos-delay="300">{{ noticia.titulo }}</h4>
+        <p data-aos="fade-up" data-aos-delay="400">{{ noticia.descripcion }}</p>
+        <small data-aos="fade-right" data-aos-delay="500">{{ noticia.tiempo }}</small>
+      </article>
+    </div>
+  </section>
+   <section class="sponsors" data-aos="fade-up" data-aos-duration="1000">
+    <h2 data-aos="fade-down">Patrocinadores</h2>
+    <div class="sponsor-logos">
+      <img *ngFor="let sponsor of sponsors" [src]="sponsor.logo" loading="lazy" alt="Sponsor" data-aos="zoom-in" data-aos-delay="200">
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

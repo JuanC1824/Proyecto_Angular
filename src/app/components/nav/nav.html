@@ -1,0 +1,34 @@
+<nav class="menu">
+  <div class="brand">
+    <a routerLink="/home">
+      <img src="assets/img/descarga__2_-removebg-preview.png" loading="lazy" alt="logo" class="logo">
+    </a>
+    <p>Deportes<span>777</span></p>
+    <ul class="items2">
+      <li class="dropdown" (click)="toggleMenu()">
+        <a href="javascript:void(0)">Todos los deportes ▾</a>
+        <ul class="dropdown-content" [class.show]="isMenuOpen">
+          <li><a routerLink="/nfl">🏈 NFL</a></li>
+          <li><a routerLink="/soccer">⚽ Fútbol</a></li>
+          <li><a routerLink="/boxeo">🥊 Boxeo</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/tendencias">Tendencias</a></li>
+      <li><a routerLink="/calendario">Calendario</a></li>
+    </ul>
+  </div>
+  <ul class="items">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngIf="!(isLoggedIn | async)"><a routerLink="/login">Iniciar Sesión</a></li>
+    <li *ngIf="!(isLoggedIn | async)"><a routerLink="/register">Registro</a></li>
+    <li *ngIf="isLoggedIn | async" class="user dropdown" (click)="toggleUserMenu()">
+      <div class="avatar">
+        {{ (currentUser | async)?.charAt(0) }}
+      </div>
+      <ul class="dropdown-content" [class.show]="isUserMenuOpen">
+        <li><button class="logout-btn" (click)="logout(); $event.stopPropagation()">Cerrar Sesión</button></li>
+      </ul>
+    </li>
+    <li><a routerLink="/ayuda">Ayuda</a></li>
+  </ul>
+</nav>

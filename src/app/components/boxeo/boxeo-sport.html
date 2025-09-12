@@ -1,0 +1,117 @@
+ <app-nav></app-nav>
+<div class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>BOXEO EN VIVO</h1>
+    <p>Los combates, noticias y estadísticas en tiempo real</p>
+    <button class="btn-primary">Ver Combates en Vivo →</button>
+  </div>
+</div>
+<div class="main-content">
+  <div class="content-grid">
+    <section class="latest-news">
+      <h2>Últimas Noticias</h2>
+      <div class="news-grid">
+        <div class="news-card" *ngFor="let noticia of noticias">
+          <img [src]="noticia.imagen" loading="lazy" alt="Noticia">
+          <div class="news-content">
+            <h3>{{ noticia.titulo }}</h3>
+            <p>{{ noticia.resumen }}</p>
+            <span class="categoria">{{ noticia.categoria }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside class="live-sidebar">
+      <h2>Combates en Vivo</h2>
+      <div class="live-fight" *ngFor="let fight of combatesEnVivo">
+        <h3>{{ fight.luchador1 }} vs {{ fight.luchador2 }}</h3>
+        <p>{{ fight.estado }}</p>
+        <video controls preload="metadata" [poster]="fight.poster">
+          <source [src]="fight.url" type="video/mp4">
+        </video>
+      </div>
+    </aside>
+  </div>
+<section class="video-highlights">
+  <h2>Videos Destacados</h2>
+  <button class="carousel-btn left" (click)="scrollLeft()">⟨</button>
+  <button class="carousel-btn right" (click)="scrollRight()">⟩</button>
+  <div class="video-grid" #carousel>
+    <div class="video-card" *ngFor="let video of videos; let i = index">
+      <video controls preload="metadata" (play)="onVideoPlay($event)">
+        <source [src]="video.url" type="video/mp4">
+      </video>
+      <p>{{ video.titulo }}</p>
+    </div>
+  </div>
+</section>
+  <section class="upcoming-fights">
+    <h2>Próximos Combates</h2>
+    <div class="fight-cards">
+      <div class="fight-card" *ngFor="let fight of combates">
+        <img [src]="fight.imagen" loading="lazy" alt="Combate">
+        <div class="fight-info">
+          <h3>{{ fight.luchador1 }} vs {{ fight.luchador2 }}</h3>
+          <p>{{ fight.fecha | date:'dd/MM/yyyy' }} - {{ fight.lugar }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="recent-results">
+    <h2>Resultados Recientes</h2>
+    <div class="results-grid">
+      <div class="result-card" *ngFor="let result of resultados">
+        <img [src]="result.imagen" loading="lazy" alt="Resultado">
+        <div class="result-info">
+          <h3>{{ result.luchador1 }} {{ result.puntaje1 }} - {{ result.puntaje2 }} {{ result.luchador2 }}</h3>
+          <p>{{ result.fecha | date:'dd/MM/yyyy' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="statistics">
+  <h2>Rankings y Estadísticas</h2>
+  <div class="stats-grid">
+    <div class="stat-card" *ngFor="let stat of estadisticas">
+      <h3>{{ stat.nombre }}</h3>
+      <p>{{ stat.valor }}</p>
+      <small *ngIf="stat.detalle">{{ stat.detalle }}</small>
+    </div>
+  </div>
+
+  <div class="rankings">
+    <h3>🏆 Top 5 Libra por Libra</h3>
+    <ul>
+      <li *ngFor="let rank of ranking; let i = index">
+        <span class="rank">{{ i+1 }}</span>
+        <img [src]="rank.img" loading="lazy" alt="{{ rank.nombre }}" class="boxer-img">
+        <div class="boxer-info">
+          <strong>{{ rank.nombre }}</strong>
+          <span>{{ rank.pais }}</span>
+        </div>
+        <span class="record">{{ rank.record }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+  <section class="analysis">
+    <h2>Análisis y Resúmenes</h2>
+    <div class="analysis-grid">
+      <div class="analysis-card" *ngFor="let analisis of resumenes">
+        <img [src]="analisis.imagen" loading="lazy" alt="Resumen">
+        <div class="analysis-content">
+          <h3>{{ analisis.titulo }}</h3>
+          <p>{{ analisis.resumen }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sponsors">
+    <h2>Patrocinadores</h2>
+    <div class="sponsor-logos">
+      <img *ngFor="let sponsor of sponsors" [src]="sponsor.logo" loading="lazy" alt="Sponsor">
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

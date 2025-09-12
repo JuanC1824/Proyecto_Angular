@@ -1,0 +1,212 @@
+<app-nav></app-nav>
+<div class="saludo" data-aos="fade-up">
+  <section class="apartado-img">
+    <div class="info">
+      <p class="color" data-aos="fade-right">Últimas Noticias</p>
+      <h3 data-aos="zoom-in">Vive la Pasión del Deporte</h3>
+      <p class="informado" data-aos="fade-up" data-aos-delay="200">
+        Mantente informado con las noticias más recientes<br />
+        del mundo deportivo, resultados en tiempo real y<br />
+        análisis profundos de tus deportes favoritos.
+      </p>
+      <a routerLink="" data-aos="flip-left" data-aos-delay="400">Ver Noticias →</a>
+    </div>
+  </section>
+</div>
+<section class="informes" data-aos="fade-up">
+  <h1>Disciplinas Deportivas</h1>
+  <p>
+    Explora todas las disciplinas deportivas y mantente informado sobre las últimas
+    noticias, resultados y estadísticas de cada deporte.
+  </p>
+</section>
+<div class="modulos">
+  <div data-aos="zoom-in" data-aos-delay="100">
+    <img src="assets/img/9f9d012f75decff078874e6445c2dbe1.jpg" loading="lazy" alt="modulo-1" />
+    <p>Fútbol</p>
+    <p>
+      El deporte más popular del mundo con ligas y competiciones internacionales.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+  <div data-aos="zoom-in" data-aos-delay="200">
+    <img src="assets/img/c06fdad0482bfdf005ca660476fff41b.jpg" loading="lazy" alt="modulo-2" />
+    <p>Baloncesto</p>
+    <p>
+      Deporte dinámico con las mejores ligas profesionales y competiciones universitarias.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+  <div data-aos="zoom-in" data-aos-delay="300">
+    <img src="assets/img/b14974173fcc5daadff470132055072a.jpg" loading="lazy" alt="modulo-3" />
+    <p>Tenis</p>
+    <p>
+      Deporte individual con torneos Grand Slam y competiciones profesionales.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+  <div data-aos="zoom-in" data-aos-delay="400">
+    <img src="assets/img/6984902f5b11ff7e420523ba37b3c674.jpg" loading="lazy" alt="modulo-4" />
+    <p>Natación</p>
+    <p>
+      Deporte acuático con competiciones olímpicas y campeonatos mundiales.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+  <div data-aos="zoom-in" data-aos-delay="500">
+    <img src="assets/img/8935bc8f49eac8f890e50d7d7030f62c.jpg" loading="lazy" alt="modulo-5" />
+    <p>Atletismo</p>
+    <p>
+      La base de todos los deportes con carreras, saltos y lanzamientos.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+  <div data-aos="zoom-in" data-aos-delay="600">
+    <img src="assets/img/3d52ab2e66a849c0b201bd189c0155f9.jpg" loading="lazy" alt="modulo-6" />
+    <p>Ciclismo</p>
+    <p>
+      Deporte de resistencia con competiciones de ruta, montaña y pista.
+    </p>
+    <a routerLink="">Explorar →</a>
+  </div>
+</div>
+<div class="hero-container-2">
+  <div class="hero-background-2"></div>
+  <div class="hero-content-2">
+    <span class="tag-2">INGLATERRA</span>
+    <h1>PREMIER LEAGUE</h1>
+    <p>
+      El Manchester City continúa imponiendo su dominio con victorias sólidas, mientras que el Liverpool y el Arsenal no
+      se quedan atrás en la lucha por la cima. Chelsea y Tottenham buscan recuperar protagonismo.
+    </p>
+    <button class="btn-2">Ver detalles →</button>
+  </div>
+</div>
+<div class="imagenes" data-aos="fade-up" data-aos-duration="1500">
+  <img src="assets/img/i (1).png" loading="lazy" alt="imagen1" data-aos="zoom-in" />
+  <img src="assets/img/i (9).png" loading="lazy" alt="imagen2" data-aos="zoom-in" data-aos-delay="100"/>
+  <img src="assets/img/i (8).png" loading="lazy" alt="imagen3" data-aos="zoom-in" data-aos-delay="200"/>
+  <img src="assets/img/i (7).png" loading="lazy" alt="imagen4" data-aos="zoom-in" data-aos-delay="300"/>
+  <img src="assets/img/i (6).png" loading="lazy" alt="imagen5" data-aos="zoom-in" data-aos-delay="400"/>
+  <img src="assets/img/i (5).png" loading="lazy" alt="imagen6" data-aos="zoom-in" data-aos-delay="500"/>
+  <img src="assets/img/i (4).png" loading="lazy" alt="imagen7" data-aos="zoom-in" data-aos-delay="600"/>
+  <img src="assets/img/i.png" loading="lazy" alt="imagen8" data-aos="zoom-in" data-aos-delay="800"/>
+</div>
+<section
+  class="deportes-section"
+  aria-label="Sección de noticias deportivas"
+  data-aos="fade-up"
+>
+  <header class="deportes-header" data-aos="fade-down">
+    <h2>Últimas Noticias Deportivas</h2>
+    <p  data-aos="fade-right">Los acontecimientos más importantes del mundo del deporte, al instante.</p>
+  </header>
+  <div class="deportes-cards">
+    <article
+      class="deporte-card"
+      *ngFor="let noticia of noticias"
+      role="article"
+      tabindex="0"
+      data-aos="flip-up"
+      data-aos-duration="1000"
+    >
+      <img
+        [src]="noticia.imagen"
+        [alt]="noticia.titulo"
+        class="card-img"
+        loading="lazy"
+        data-aos="zoom-in"
+      />
+      <div class="card-content" data-aos="fade-left" data-aos-delay="200">
+        <div class="card-meta">
+          <span class="categoria">{{ noticia.categoria }}</span>
+          <time [attr.datetime]="noticia.fechaISO" class="fecha">
+            {{ noticia.fecha | date: 'mediumDate' }}
+          </time>
+          <span class="autor">Por {{ noticia.autor }}</span>
+        </div>
+        <h3  data-aos="fade-up">{{ noticia.titulo }}</h3>
+        <p  data-aos="fade-up">{{ noticia.resumen }}</p>
+        <a
+          [routerLink]="['/noticias', noticia.id]"
+          class="btn-ver-mas"
+          aria-label="Leer más sobre {{ noticia.titulo }}"
+          data-aos="fade-right"
+          data-aos-delay="300"
+        >
+          Leer más →
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+<div class="hero-container">
+  <div class="hero-background"  data-aos="fade-in" data-aos-duration="1000"></div>
+<div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+  <span class="tag" data-aos="fade-left" data-aos-delay="100">ESPAÑA</span>
+  <h1 data-aos="zoom-in" data-aos-delay="200">LA LIGA EA SPORTS</h1>
+  <p data-aos="fade-up" data-aos-delay="300">
+    Real Madrid y FC Barcelona arrancan con fuerza y se hacen con victorias muy valiosas en campos hostiles.
+    El Atlético de Madrid tiene más deberes, pero el Villarreal sorprende.
+  </p>
+  <button class="btn" data-aos="flip-up" data-aos-delay="400">Mostrar todos →</button>
+  <div class="logo-container">
+    <div class="logo-box" data-aos="zoom-in" data-aos-delay="500">
+      <img src="assets/img/image (8).webp" loading="lazy" alt="Jupiler Pro League" />
+    </div>
+    <div class="logo-box" data-aos="zoom-in" data-aos-delay="600">
+      <img src="assets/img/image (6).webp" loading="lazy" alt="LaLiga" />
+    </div>
+    <div class="logo-box" data-aos="zoom-in" data-aos-delay="700">
+      <img src="assets/img/image (5).webp" loading="lazy" alt="Serie A" />
+    </div>
+    <div class="logo-box" data-aos="zoom-in" data-aos-delay="800">
+      <img src="assets/img/image (7).webp" loading="lazy" alt="Bundesliga" />
+    </div>
+    <div class="logo-box" data-aos="zoom-in" data-aos-delay="900">
+      <img src="assets/img/image (9).webp" loading="lazy" alt="FIFA+" />
+    </div>
+  </div>
+</div>
+</div> 
+<div class="video-text-container" data-aos="fade-up" data-aos-duration="1000">
+  <div class="video-box" data-aos="fade-right" data-aos-delay="200">
+    <div class="video-overlay-container">
+      <video #videoPlayer preload="metadata" controls>
+        <source src="assets/video/LEVANTE UD 2 - 3 FC BARCELONA _ RESUMEN LALIGA EA SPORTS.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+      <div class="video-overlay" *ngIf="!(isLoggedIn | async)" data-aos="fade-in" data-aos-delay="300">
+        <img src="assets/img/placeholder.jpg" loading="lazy" alt="Video bloqueado">
+        <button (click)="showRegisterAlert()">▶ Ver ahora</button>
+      </div>
+    </div>
+  </div>
+  <div class="text-box" data-aos="fade-left" data-aos-delay="400">
+    <h2 data-aos="fade-up">Levante UD 2 - 3 FC Barcelona | Resumen la liga EA SPORTS</h2>
+    <p data-aos="fade-up" data-aos-delay="500"> 
+      El FC Barcelona firma una remontada épica en el Ciutat de València y suma su segunda victoria consecutiva.
+      Pedri y Ferran igualaron el choque en seis minutos y un autogol provocado por Lamine Yamal dio el triunfo
+      en el descuento.
+    </p>
+  </div>
+</div>
+<div class="video-section" data-aos="fade-up" data-aos-duration="1000">
+  <h3  data-aos="fade-down">Tendencia europea</h3>
+  <div class="video-row">
+    <div class="video-card" *ngFor="let video of videos" data-aos="zoom-in" data-aos-delay="100">
+      <video [src]="video.url" preload="metadata" controls></video>
+      <p class="video-desc"  data-aos="fade-up" data-aos-delay="200">{{ video.descripcion }}</p>
+    </div>
+  </div>
+</div>
+<div class="sports-section" data-aos="fade-up" data-aos-duration="1000">
+  <h3 data-aos="fade-down">Todos los deportes disponibles</h3>
+  <div class="sports-grid">
+    <div class="sport-card" *ngFor="let deporte of deportes" data-aos="flip-left" data-aos-delay="100">
+      <img [src]="deporte.imagen" loading="lazy" [alt]="deporte.nombre" data-aos="zoom-in">
+      <p data-aos="fade-up" data-aos-delay="200">{{ deporte.nombre }}</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
