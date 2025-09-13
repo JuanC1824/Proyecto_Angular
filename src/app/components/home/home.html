@@ -21,55 +21,38 @@
   </p>
 </section>
 <div class="modulos">
-  <div data-aos="zoom-in" data-aos-delay="100">
-    <img src="assets/img/9f9d012f75decff078874e6445c2dbe1.jpg" loading="lazy" alt="modulo-1" />
-    <p>Fútbol</p>
-    <p>
-      El deporte más popular del mundo con ligas y competiciones internacionales.
-    </p>
-    <a routerLink="">Explorar →</a>
-  </div>
-  <div data-aos="zoom-in" data-aos-delay="200">
-    <img src="assets/img/c06fdad0482bfdf005ca660476fff41b.jpg" loading="lazy" alt="modulo-2" />
-    <p>Baloncesto</p>
-    <p>
-      Deporte dinámico con las mejores ligas profesionales y competiciones universitarias.
-    </p>
-    <a routerLink="">Explorar →</a>
-  </div>
-  <div data-aos="zoom-in" data-aos-delay="300">
-    <img src="assets/img/b14974173fcc5daadff470132055072a.jpg" loading="lazy" alt="modulo-3" />
-    <p>Tenis</p>
-    <p>
-      Deporte individual con torneos Grand Slam y competiciones profesionales.
-    </p>
-    <a routerLink="">Explorar →</a>
-  </div>
-  <div data-aos="zoom-in" data-aos-delay="400">
-    <img src="assets/img/6984902f5b11ff7e420523ba37b3c674.jpg" loading="lazy" alt="modulo-4" />
-    <p>Natación</p>
-    <p>
-      Deporte acuático con competiciones olímpicas y campeonatos mundiales.
-    </p>
-    <a routerLink="">Explorar →</a>
-  </div>
-  <div data-aos="zoom-in" data-aos-delay="500">
-    <img src="assets/img/8935bc8f49eac8f890e50d7d7030f62c.jpg" loading="lazy" alt="modulo-5" />
-    <p>Atletismo</p>
-    <p>
-      La base de todos los deportes con carreras, saltos y lanzamientos.
-    </p>
-    <a routerLink="">Explorar →</a>
-  </div>
-  <div data-aos="zoom-in" data-aos-delay="600">
-    <img src="assets/img/3d52ab2e66a849c0b201bd189c0155f9.jpg" loading="lazy" alt="modulo-6" />
-    <p>Ciclismo</p>
-    <p>
-      Deporte de resistencia con competiciones de ruta, montaña y pista.
-    </p>
-    <a routerLink="">Explorar →</a>
+  <div *ngFor="let m of modulos">
+    <img [src]="m.img" loading="lazy" />
+    <p>{{ m.titulo }}</p>
+    <p>{{ m.descripcion }}</p>
+    <a href="" (click)="abrirModal(m, $event)">Explorar →</a>
   </div>
 </div>
+@if (mostrarModal()) {
+  <div class="modal">
+    <div class="modal-content">
+      <button class="cerrar" (click)="cerrarModal()">✖</button>
+      <div class="imagen-contenedor">
+        <img [src]="moduloSeleccionado.img" alt="{{moduloSeleccionado.titulo}}">
+        <div class="blur-overlay"></div>
+      </div>
+      <button class="btn-toggle" (click)="toggleContenido()">
+        {{ mostrarContenido() ? 'Ocultar Detalles' : 'Mostrar Detalles' }}
+      </button>
+      @if (mostrarContenido()) {
+        <div class="modal-info">
+          <h2>{{ moduloSeleccionado.titulo }}</h2>
+          <p class="subtitulo">{{ moduloSeleccionado.subtitulo }}</p>
+          <hr />
+          <p class="descripcion">{{ moduloSeleccionado.descripcion }}</p>
+          <button class="btn-suscribir">Suscribirse</button>
+        </div>
+      } @else {
+        <p class="mensaje-vacio">Haz clic en "Mostrar Detalles" para ver la información.</p>
+      }
+    </div>
+  </div>
+}
 <div class="hero-container-2">
   <div class="hero-background-2"></div>
   <div class="hero-content-2">

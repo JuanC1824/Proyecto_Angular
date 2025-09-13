@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, signal} from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { Nav } from '../nav/nav';
 import { Footer } from '../footer/footer';
@@ -25,6 +25,63 @@ interface NoticiaDeportiva {
   styleUrls: ['./home.css']
 })
 export class Home implements OnInit{
+
+
+  mostrarModal = signal(false);
+  mostrarContenido = signal(true);
+
+  moduloSeleccionado: any = {};
+
+
+  modulos = [
+    {
+      titulo: 'Fútbol',
+      descripcion: 'El deporte más popular del mundo con ligas y competiciones internacionales.',
+      img: 'assets/img/9f9d012f75decff078874e6445c2dbe1.jpg'
+    },
+    {
+      titulo: 'Baloncesto',
+      descripcion: 'Deporte dinámico con las mejores ligas profesionales y competiciones universitarias.',
+      img: 'assets/img/c06fdad0482bfdf005ca660476fff41b.jpg'
+    },
+    {
+      titulo: 'Tenis',
+      descripcion: 'Deporte individual con torneos Grand Slam y competiciones profesionales.',
+      img: 'assets/img/b14974173fcc5daadff470132055072a.jpg'
+    },
+    {
+      titulo: 'Natación',
+      descripcion: 'Deporte acuático con competiciones olímpicas y campeonatos mundiales.',
+      img: 'assets/img/6984902f5b11ff7e420523ba37b3c674.jpg'
+    },
+    {
+      titulo: 'Atletismo',
+      descripcion: 'La base de todos los deportes con carreras, saltos y lanzamientos.',
+      img: 'assets/img/8935bc8f49eac8f890e50d7d7030f62c.jpg'
+    },
+    {
+      titulo: 'Ciclismo',
+      descripcion: 'Deporte de resistencia con competiciones de ruta, montaña y pista.',
+      img: 'assets/img/3d52ab2e66a849c0b201bd189c0155f9.jpg'
+    }
+  ];
+
+  abrirModal(modulo: any, event: Event) {
+    event.preventDefault();
+    this.moduloSeleccionado = modulo;
+    this.mostrarModal.set(true);
+    this.mostrarContenido.set(true);
+  }
+
+  cerrarModal() {
+    this.mostrarModal.set(false);
+  }
+
+  toggleContenido() {
+    this.mostrarContenido.update(valor => !valor);
+  }
+
+
   noticias: NoticiaDeportiva[] = [
     {
       id: 1,

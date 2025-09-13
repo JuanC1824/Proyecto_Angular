@@ -15,6 +15,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.css']
 })
 export class Login {
+
+  esOscuro: boolean = false;
+
+  toggleModo() {
+    this.esOscuro = !this.esOscuro;
+  }
+
   constructor(private router: Router, private authService: AuthService) {}
 
   loginData = {

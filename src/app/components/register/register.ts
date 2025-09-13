@@ -16,6 +16,12 @@ import Swal from 'sweetalert2';
 })
 export class Register {
 
+   esOscuro: boolean = false;
+
+  toggleModo() {
+    this.esOscuro = !this.esOscuro;
+  }
+
   constructor(private router: Router, private authService: AuthService) {}
 
   registerData = {
