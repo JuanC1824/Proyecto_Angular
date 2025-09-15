@@ -175,3 +175,7 @@ body, html { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; backg
   background-color: black;
   object-fit: contain;
 }
+
+.visitantes {
+  margin-left: 40px;
+}

@@ -16,14 +16,9 @@
 }
 
 .tendencia-card {
-  background:#1a1a1a;
   border-radius:10px;
   overflow:hidden;
-  transition:0.3s;
-}
-
-.tendencia-card:hover { 
-  transform:translateY(-5px); 
+  transition: 0.3s;
 }
 
 .tendencia-card img {
@@ -44,6 +39,7 @@
   color:#ccc;
   margin-bottom:8px;
 }
+
 .categoria {
   font-size:0.8rem;
   background:#e50914;

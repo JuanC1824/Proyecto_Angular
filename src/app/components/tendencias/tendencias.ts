@@ -39,4 +39,44 @@ export class TendenciasComponent {
     { titulo:'Análisis táctico Millonarios', descripcion:'Millonarios domina en posesión y efectividad', categoria:'Análisis', imagen:'assets/img/TBGIUIYYN5G5VEJYQEU4Z7YNBE.webp' },
     { titulo:'Análisis táctico Millonarios', descripcion:'Millonarios domina en posesión y efectividad', categoria:'Análisis', imagen:'assets/img/5dabbf5f335be.webp' }
   ];
+
+  hoverIndex: number | null = null;
+
+  Listatendencias = [
+    {
+      imagen: 'assets/imagen1.jpg',
+      titulo: 'Trend 1',
+      descripcion: 'Descripción de la tendencia 1',
+      categoria: 'Moda'
+    },
+    {
+      imagen: 'assets/imagen2.jpg',
+      titulo: 'Trend 2',
+      descripcion: 'Descripción de la tendencia 2',
+      categoria: 'Tecnología'
+    },
+    {
+      imagen: 'assets/imagen3.jpg',
+      titulo: 'Trend 3',
+      descripcion: 'Descripción de la tendencia 3',
+      categoria: 'Entretenimiento'
+    }
+  ];
+
+  obtenerEstilo(index: number) {
+    return this.hoverIndex === index
+      ? {
+          backgroundColor: '#519ee5ff',
+          color: '#1a1a1a',
+          transform: 'translateY(-5px) scale(1.05)',
+          boxShadow: '0 8px 20px rgba(0,0,0,0.5)',
+          transition: '0.3s'
+        }
+      : {
+          backgroundColor: '#1a1a1a',
+          color: '#fff',
+          transform: 'translateY(0) scale(1)',
+          transition: '0.3s'
+        };
+  }
 }

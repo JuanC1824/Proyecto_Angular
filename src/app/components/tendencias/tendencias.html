@@ -1,8 +1,12 @@
-<app-nav>   </app-nav>
+<app-nav></app-nav>
 <section class="tendencias">
   <h2>Tendencias</h2>
   <div class="tendencias-grid">
-    <div class="tendencia-card" *ngFor="let trend of tendencias">
+    <div class="tendencia-card"
+         *ngFor="let trend of tendencias; let i = index"
+         [ngStyle]="obtenerEstilo(i)"
+         (mouseenter)="hoverIndex = i"
+         (mouseleave)="hoverIndex = null">
       <img [src]="trend.imagen" loading="lazy" alt="Trend Image">
       <div class="tendencia-content">
         <h3>{{ trend.titulo }}</h3>

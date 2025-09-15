@@ -186,10 +186,12 @@
 <div class="sports-section" data-aos="fade-up" data-aos-duration="1000">
   <h3 data-aos="fade-down">Todos los deportes disponibles</h3>
   <div class="sports-grid">
-    <div class="sport-card" *ngFor="let deporte of deportes" data-aos="flip-left" data-aos-delay="100">
-      <img [src]="deporte.imagen" loading="lazy" [alt]="deporte.nombre" data-aos="zoom-in">
-      <p data-aos="fade-up" data-aos-delay="200">{{ deporte.nombre }}</p>
-    </div>
+    @for (deporte of deportes; track deporte.nombre) {
+      <div class="sport-card" data-aos="flip-left" data-aos-delay="100">
+        <img [src]="deporte.imagen" loading="lazy" [alt]="deporte.nombre" data-aos="zoom-in">
+        <p data-aos="fade-up" data-aos-delay="200">{{ deporte.nombre }}</p>
+      </div>
+    }
   </div>
 </div>
 <app-footer></app-footer>
