@@ -153,7 +153,6 @@
   color: yellow;
 }
 
-/* Clase para mostrar menú */
 .show {
   display: block;
 }
@@ -182,7 +181,7 @@
 .user .dropdown-content {
   display: none;
   position: absolute;
-  top: 45px; /* debajo del avatar */
+  top: 45px;
   right: 0;
   background-color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);

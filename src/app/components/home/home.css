@@ -701,7 +701,7 @@
 }
 
 .btn-toggle {
-  background: #313131;
+  background: #5e5e5e;
   color: white;
   border: none;
   width: 100%;
@@ -714,7 +714,7 @@
 }
 
 .btn-toggle:hover {
-  background: #5a5a5a;
+  background: #969696;
   transform: scale(1.02);
 }
 

@@ -15,6 +15,93 @@
       </div>
       <button>&gt;</button>
     </div>
+    <div class="match">
+  <div class="teams">
+    <span>Envigado</span>
+    <span>Águilas Doradas</span>
+  </div>
+  <div class="details">
+    <span>EN VIVO</span>
+    <span>Polideportivo Sur, Envigado</span>
+  </div>
+  <div class="status-controller">
+    <button (click)="cambiarEstado('disponible')">Disponible</button>
+    <button (click)="cambiarEstado('agotado')">Agotado</button>
+    <button (click)="cambiarEstado('espera')">En Espera</button>
+  </div>
+  <div class="contenedor-status">
+    @switch (estado)
+    {
+      @case ('disponible') {
+        <p class="mensaje exito">Entradas disponibles</p>
+      }
+      @case ('agotado') {
+        <p class="mensaje error">Entradas agotadas</p>
+      }
+      @case ('espera') {
+        <p class="mensaje info">En lista de espera</p>
+      }
+    }
+  </div>
+</div>
+ <div class="match">
+  <div class="teams">
+    <span>Envigado</span>
+    <span>Águilas Doradas</span>
+  </div>
+  <div class="details">
+    <span>EN VIVO</span>
+    <span>Polideportivo Sur, Envigado</span>
+  </div>
+  <div class="status-controller">
+    <button (click)="cambiarEstado('disponible')">Disponible</button>
+    <button (click)="cambiarEstado('agotado')">Agotado</button>
+    <button (click)="cambiarEstado('espera')">En Espera</button>
+  </div>
+  <div class="contenedor-status">
+    @switch (estado)
+    {
+      @case ('disponible') {
+        <p class="mensaje exito">Entradas disponibles</p>
+      }
+      @case ('agotado') {
+        <p class="mensaje error">Entradas agotadas</p>
+      }
+      @case ('espera') {
+        <p class="mensaje info">En lista de espera</p>
+      }
+    }
+  </div>
+</div>
+ <div class="match">
+  <div class="teams">
+    <span>Envigado</span>
+    <span>Águilas Doradas</span>
+  </div>
+  <div class="details">
+    <span>EN VIVO</span>
+    <span>Polideportivo Sur, Envigado</span>
+  </div>
+  <div class="status-controller">
+    <button (click)="cambiarEstado('disponible')">Disponible</button>
+    <button (click)="cambiarEstado('agotado')">Agotado</button>
+    <button (click)="cambiarEstado('espera')">En Espera</button>
+  </div>
+  <div class="contenedor-status">
+    @switch (estado)
+    {
+      @case ('disponible') {
+        <p class="mensaje exito">Entradas disponibles</p>
+      }
+      @case ('agotado') {
+        <p class="mensaje error">Entradas agotadas</p>
+      }
+      @case ('espera') {
+        <p class="mensaje info">En lista de espera</p>
+      }
+    }
+  </div>
+</div>
     <div class="filters">
       <select class="league-filter">
         <option>Selecciona una Liga</option>
